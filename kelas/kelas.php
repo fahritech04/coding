@@ -17,8 +17,11 @@
         
         include "../config.php";
         $query = mysqli_query($koneksi, 'SELECT * FROM data_kelas') ?>
-        <a href="../siswa/index.php"  class="btn btn-primary">Home</a>
-        <a href="../kelas/inputkelas.php" class="btn btn-primary">Data Baru</a>
+        <a href="../siswa/index.php"  class="btn btn-primary">Data Siswa</a>
+        <a href="../nilai/nilai.php"  class="btn btn-warning">Nilai</a>
+        <div class="mt-3 mb-2">
+            <a href="../kelas/inputkelas.php" class="btn btn-primary">Data Baru</a>
+        </div>
         
         <table class="table table-bordered">
             <thread>

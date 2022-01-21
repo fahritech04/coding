@@ -10,5 +10,6 @@
     data_siswa (nama_siswa, kelas_id, no_hp, alamat)
     VALUE ('$nama_siswa', '$kelas_id', '$no_hp', '$alamat')");
 
+
     header('Location: ../siswa/index.php');
 ?>

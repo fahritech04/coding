@@ -14,25 +14,25 @@
     <h2 class="text-center bg-warning py-2">NILAI SISWA</h2>
     <div class="my-3 d-flex justify-content between">
         <div>
-            <a href="../coding/siswa/index.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Siswa</a>
-            <a href="../coding/kelas/kelas.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Kelas</a>
-            <a href="nilai.php" class="bg-warning p-2 mr-2 text-decoration-none text-white">Nilai</a>
+            <a href="../siswa/index.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Siswa</a>
+            <a href="../kelas/kelas.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Kelas</a>
         </div>
     </div>
     
     <?php
         
-        include "./config.php";
+        include "../config.php";
         
-        $query = mysqli_query($koneksi, 'SELECT * FROM data_siswa JOIN nilai ON data_siswa.id = nilai.id_siswa') ?>
-        <a href="inputnilai.php" class="btn btn-primary">Input Nilai</a> 
+        $query = mysqli_query($koneksi, "SELECT * FROM nilai JOIN data_siswa on data_siswa.id = nilai.id_siswa")
+        ?>
+        <a href="../nilai/input_nilai.php" class="btn btn-primary">Input Nilai</a> 
         <table class="table table-bordered">
             <thread>
                 <tr>
                     <th>No</th>
                     <th>Nama Siswa</th>
                     <th>Nilai</th>
-                    <th>Aksi</th>
+                    <th>Status</th>
                 </tr>
             </thread>
             <?php $no=1; while($data = mysqli_fetch_array($query)){ ?>
@@ -41,12 +41,7 @@
                         <td><?= $no++ ?></td>
                         <td><?= $data['nama_siswa'] ?></td>
                         <td><?= $data['nilai'] ?></td>
-                        <td>
-                            <div class="btn-group">
-                                <a href="edit.php?id=<?=$data["id"]?>" class="btn btn-success">Edit</a>
-                                <a href='delete.php?id=<?=$data['id']?>' class="btn btn-danger">Delete</a>
-                            </div>
-                        </td>
+                        <td></td>
                     </tr>
                 </tbody>
             <?php 

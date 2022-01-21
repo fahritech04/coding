@@ -16,7 +16,6 @@
         <div>
             <a href="../siswa/index.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Siswa</a>
             <a href="../kelas/kelas.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Kelas</a>
-            <a href="../nilai/nilai.php" class="bg-warning p-2 mr-2 text-decoration-none text-white">Nilai</a>
         </div>
     </div>
     
@@ -24,16 +23,14 @@
         
         include "../config.php";
         
-        $query = mysqli_query($koneksi, 'SELECT data_siswa.id, nama_siswa, nama_kelas, no_hp, alamat from data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id') ?>
-        <a href="../siswa/input.php" class="btn btn-primary">Data Baru</a> 
+        $query = mysqli_query($koneksi, "SELECT * FROM data_siswa JOIN nilai ON data_siswa.id = nilai.id_siswa") ?>
+        <a href="../nilai/input_nilai.php" class="btn btn-primary">Input Nilai</a> 
         <table class="table table-bordered">
             <thread>
                 <tr>
                     <th>No</th>
                     <th>Nama Siswa</th>
-                    <th>Kelas</th>
-                    <th>Nomor HP</th>
-                    <th>Alamat</th>
+                    <th>Nilai</th>
                     <th>Aksi</th>
                 </tr>
             </thread>
@@ -42,13 +39,11 @@
                     <tr>
                         <td><?= $no++ ?></td>
                         <td><?= $data['nama_siswa'] ?></td>
-                        <td><?= $data['nama_kelas'] ?></td>
-                        <td><?= $data['no_hp'] ?></td>
-                        <td><?= $data['alamat'] ?></td>
+                        <td><?= $data['nilai'] ?></td>
                         <td>
                             <div class="btn-group">
-                                <a href="../siswa/edit.php?id=<?=$data["id"]?>" class="btn btn-success">Edit</a>
-                                <a href='../siswa/delete.php?id=<?=$data['id']?>' class="btn btn-danger">Delete</a>
+                                <!-- <a href="../nilai/edit_nilai.php?=$data["id"]?>" class="btn btn-success">Edit</a>
+                                <a href='../nilai/delete_nilai.php?=$data['id']?>' class="btn btn-danger">Delete</a> -->
                             </div>
                         </td>
                     </tr>
