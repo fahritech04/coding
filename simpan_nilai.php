@@ -1,10 +1,10 @@
 <?php
  include "./config.php";
  
-    $nama_kelas = $_POST['nama_kelas'];
+    $nilai = $_POST['nilai'];
 
     mysqli_query($koneksi, "INSERT INTO 
-    data_kelas (nama_kelas) VALUE ('$nama_kelas')");
+    data_kelas (nilai) VALUE ('$nilai')");
 
     header('Location: kelas.php');
 ?>

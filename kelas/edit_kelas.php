@@ -1,5 +1,5 @@
 <?php
-    include "./config.php";
+    include "../config.php";
 
     $query  = mysqli_query($koneksi, "SELECT * FROM data_kelas WHERE id='$_GET[id]'");
     $data   = mysqli_fetch_object($query);
@@ -10,7 +10,7 @@
 
 <div class="container">
     <div class="col-6">
-        <form action="update_kelas.php" method="post">
+        <form action="../kelas/update_kelas.php" method="post">
             <input type="hidden" name="id" value="<?=$data->id ?>">
             <div class="mb-3">
                 <label for="">Nama Kelas</label>
@@ -18,7 +18,7 @@
             </div>
            
             <div class="btn-group">
-                <a href="kelas.php" class="btn btn-warning">Batal</a>
+                <a href="../kelas/kelas.php" class="btn btn-warning">Batal</a>
                 <input type="submit" value="Update" class="btn btn-primary">
             </div>
         </form>

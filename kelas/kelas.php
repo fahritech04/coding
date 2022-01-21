@@ -15,10 +15,10 @@
     
     <?php
         
-        include "./config.php";
+        include "../config.php";
         $query = mysqli_query($koneksi, 'SELECT * FROM data_kelas') ?>
-        <a href="index.php"  class="btn btn-primary">Home</a>
-        <a href="inputkelas.php" class="btn btn-primary">Data Baru</a>
+        <a href="../siswa/index.php"  class="btn btn-primary">Home</a>
+        <a href="../kelas/inputkelas.php" class="btn btn-primary">Data Baru</a>
         
         <table class="table table-bordered">
             <thread>
@@ -36,8 +36,8 @@
                         
                         <td>
                             <div class="btn-group">
-                                <a href="edit_kelas.php?id=<?=$data["id"]?>" class="btn btn-success">Edit</a>
-                                <a href='delete_kelas.php?id=<?=$data['id']?>' class="btn btn-danger">Delete</a>
+                                <a href="../kelas/edit_kelas.php?id=<?=$data["id"]?>" class="btn btn-success">Edit</a>
+                                <a href='../kelas/delete_kelas.php?id=<?=$data['id']?>' class="btn btn-danger">Delete</a>
                             </div>
                         </td>
                     </tr>

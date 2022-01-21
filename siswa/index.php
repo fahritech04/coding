@@ -12,22 +12,23 @@
 
 <body class="container">
     <h2 class="text-center bg-warning py-2">APLIKASI DATA SISWA</h2>
+    <div class="mt-3">
+        <a href="../login.php" class="bg-success p-2 mr-2 text-decoration-none text-white">Login</a>
+    </div>
     <div class="my-3 d-flex justify-content between">
         <div>
-            <a href="index.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Siswa</a>
-            <a href="kelas.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Kelas</a>
-        </div>
-        <div>
-            <a href="login.php" class="bg-success p-2 mr-2 text-decoration-none text-white">Login</a>
+            <a href="../siswa/index.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Siswa</a>
+            <a href="../kelas/kelas.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Kelas</a>
+            <a href="../nilai.php" class="bg-warning p-2 mr-2 text-decoration-none text-white">Nilai</a>
         </div>
     </div>
     
     <?php
         
-        include "./config.php";
+        include "../config.php";
         
         $query = mysqli_query($koneksi, 'SELECT data_siswa.id, nama_siswa, nama_kelas, no_hp, alamat from data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id') ?>
-        <a href="input.php" class="btn btn-primary">Data Baru</a> 
+        <a href="../siswa/input.php" class="btn btn-primary">Data Baru</a> 
         <table class="table table-bordered">
             <thread>
                 <tr>

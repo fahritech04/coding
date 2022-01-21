@@ -1,5 +1,5 @@
 <?php
- include "./config.php";
+ include "../config.php";
 
     $id         = $_POST['id'];
     $nama_siswa = $_POST['nama_siswa'];
@@ -10,5 +10,5 @@
     mysqli_query($koneksi, "UPDATE data_siswa SET nama_siswa='$nama_siswa',  
     kelas_id='$kelas_id', no_hp='$no_hp', alamat='$alamat' WHERE id='$id'");
    
-    header('Location: index.php');
+    header('Location: ../siswa/index.php');
 ?>

@@ -1,0 +1,5 @@
+1. insert data ke tabel database langsung banyak
+2. membuat tabl baru dengan nama tabel (nilai)
+yang terdiri dari id, id_siswa, nilai
+3. tampilan halaman
+No	Nama Siswa	Nilai	Status
