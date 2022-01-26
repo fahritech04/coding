@@ -1,7 +1,7 @@
 <?php
     include "../config.php";
 
-    $query  = mysqli_query($koneksi, "SELECT * FROM data_siswa WHERE id='$_GET[id]'");
+    $query  = mysqli_query($koneksi, "SELECT * FROM data_siswa WHERE id_siswa='$_GET[id]'");
     $data   = mysqli_fetch_object($query);
 ?>
 <h2 class="text-center bg-warning py-2">APLIKASI DATA SISWA</h2>
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="col-6">
         <form action="../siswa/update.php" method="POST">
-            <input type="hidden" name="id" value="<?=$data->id ?>">
+            <input type="hidden" name="id_siswa" value="<?=$data->id_siswa ?>">
             <div class="mb-3">
                 <label for="">Nama Siswa</label>
                 <input type="text" name="nama_siswa" class="form-control" value="<?=$data->nama_siswa ?>">

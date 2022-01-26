@@ -23,7 +23,7 @@
         
         include "../config.php";
         
-        $query = mysqli_query($koneksi, 'SELECT data_siswa.id, nama_siswa, nama_kelas, no_hp, alamat from data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id') ?>
+        $query = mysqli_query($koneksi, 'SELECT data_siswa.id_siswa, nama_siswa, nama_kelas, no_hp, alamat from data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id') ?>
         <a href="../siswa/input.php" class="btn btn-primary">Data Baru</a> 
         <table class="table table-striped table-dark">
             <thread class="thead-dark">
@@ -46,8 +46,8 @@
                         <td><?= $data['alamat'] ?></td>
                         <td>
                             <div class="btn-group">
-                                <a href="../siswa/edit.php?id=<?=$data["id"]?>" class="btn btn-success">Edit</a>
-                                <a href='../siswa/delete.php?id=<?=$data['id']?>' class="btn btn-danger">Delete</a>
+                                <a href="../siswa/edit.php?id=<?=$data["id_siswa"]?>" class="btn btn-success">Edit</a>
+                                <a href='../siswa/delete.php?id=<?=$data['id_siswa']?>' class="btn btn-danger">Delete</a>
                             </div>
                         </td>
                     </tr>
