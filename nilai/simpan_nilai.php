@@ -2,10 +2,11 @@
 
  include "../config.php";
 
+ $siswa_id = $_POST['siswa_id'];
  $nilai = $_POST['nilai'];
 
  mysqli_query($koneksi, "INSERT INTO 
- data_nilai (nilai) VALUE ('$nilai')");
+ data_nilai (siswa_id, nilai) VALUE ('$siswa_id', '$nilai')");
 
 
 

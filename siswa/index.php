@@ -15,7 +15,7 @@
     <div class="my-3 d-flex justify-content between">
         <div>
             <a href="../kelas/kelas.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Kelas</a>
-            <a href="../nilai/nilai.php" class="bg-warning p-2 mr-2 text-decoration-none text-white">Nilai</a>
+            <a href="../nilai/nilai.php" class="bg-warning p-2 mr-2 text-decoration-none text-white">Data Nilai</a>
         </div>
     </div>
     
@@ -23,7 +23,9 @@
         
         include "../config.php";
         
-        $query = mysqli_query($koneksi, 'SELECT data_siswa.id_siswa, nama_siswa, nama_kelas, no_hp, alamat from data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id') ?>
+        $query = mysqli_query($koneksi, "SELECT * FROM data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id");
+        
+        ?>
         <a href="../siswa/input.php" class="btn btn-primary">Data Baru</a> 
         <table class="table table-striped table-dark">
             <thread class="thead-dark">

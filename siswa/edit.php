@@ -1,7 +1,7 @@
 <?php
     include "../config.php";
 
-    $query  = mysqli_query($koneksi, "SELECT * FROM data_siswa WHERE id_siswa='$_GET[id]'");
+    $query  = mysqli_query($koneksi, "SELECT * FROM data_siswa JOIN data_kelas ON data_siswa.kelas_id = data_kelas.id WHERE id_siswa='$_GET[id]'");
     $data   = mysqli_fetch_object($query);
 ?>
 <h2 class="text-center bg-warning py-2">APLIKASI DATA SISWA</h2>
@@ -14,25 +14,29 @@
             <input type="hidden" name="id_siswa" value="<?=$data->id_siswa ?>">
             <div class="mb-3">
                 <label for="">Nama Siswa</label>
-                <input type="text" name="nama_siswa" class="form-control" value="<?=$data->nama_siswa ?>">
+                <input type="text" name="nama_siswa" class="form-control" value="<?= $data->nama_siswa ?>">
             </div>
             <div class="mb-3">
                 <label>kelas</label>
-                <select name="kelas_id" class="form-control">
-                    <option value="<?=$data->kelas_id ?>"><?=$data->kelas_id ?></option>
-                    <option value="1">1</option>
-                    <option value="2">2</option>
-                    <option value="3">3</option>
-                    <option value="4">4</option>
+                <select name="kelas_id" class="form-control form-select">
+                <option disabled selected> Pilih Kelas </option>
+                    <?php 
+                        $sql = mysqli_query($koneksi, "SELECT * FROM data_kelas");
+                        while ($kelas = mysqli_fetch_array($sql)) {
+                    ?>
+                        <option value="<?=$kelas['id']?>"><?=$kelas['nama_kelas']?></option> 
+                    <?php
+                    }
+                    ?>
                 </select>
             </div>
             <div class="mb-3">
                 <label>No. Handphone</label>
-                <input type="number" name="no_hp" class="form-control" value="<?=$data->no_hp ?>">
+                <input type="number" name="no_hp" class="form-control" value="<?= $data->no_hp ?>">
             </div>
             <div class="mb-3">
                 <label>Alamat</label>
-                <textarea name="alamat" class="form-control"><?=$data->alamat?></textarea>
+                <textarea name="alamat" class="form-control"><?= $data->alamat?></textarea>
             </div>
             <div class="btn-group">
                 <a href="../siswa/index.php" class="btn btn-warning">Batal</a>

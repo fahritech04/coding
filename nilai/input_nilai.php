@@ -13,7 +13,7 @@
     <div class="col-6">
         <form action="../nilai/simpan_nilai.php" method="post">
             <div class="mb-3">
-            <select name="id_siswa" class="form-control form-select">
+            <select name="siswa_id" class="form-control form-select">
                 <option disabled selected> Pilih Nama </option>
                     <?php 
                         $sql = mysqli_query($koneksi, "SELECT * FROM data_siswa");

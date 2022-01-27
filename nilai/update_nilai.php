@@ -1,11 +1,11 @@
 <?php
  include "../config.php";
 
-    $id_siswa    = $_POST['id_siswa'];
+    $siswa_id    = $_POST['siswa_id'];
     $nilai       = $_POST['nilai'];
 
 
-    mysqli_query($koneksi, "UPDATE data_nilai, data_siswa SET data_nilai.nilai='$nilai' WHERE id_siswa='$id_siswa'");
+    mysqli_query($koneksi, "UPDATE data_nilai SET nilai='$nilai' WHERE siswa_id='$siswa_id'");
    
     header('Location: ../nilai/nilai.php');
 ?>

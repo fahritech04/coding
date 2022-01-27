@@ -1,7 +1,7 @@
 <?php
     include "../config.php";
 
-    $query  = mysqli_query($koneksi, "SELECT id_siswa, nama_siswa, nilai FROM data_nilai JOIN data_siswa ON data_nilai.siswa_id = data_siswa.id_siswa WHERE id_siswa='$_GET[id]'");
+    $query  = mysqli_query($koneksi, "SELECT id_siswa, nama_siswa, nilai FROM data_nilai JOIN data_siswa ON data_nilai.siswa_id = data_siswa.id_siswa WHERE siswa_id='$_GET[id]'");
     $data   = mysqli_fetch_object($query);
 ?>
 <h2 class="text-center bg-warning py-2">EDIT DATA KELAS</h2>
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="col-6">
         <form action="../nilai/update_nilai.php" method="post">
-            <input type="hidden" name="id_siswa" value="<?=$data->id_siswa ?>">
+            <input type="hidden" name="siswa_id" value="<?=$data->id_siswa ?>">
             <div class="mb-3">
                 <label for="">Nama Siswa</label>
                 <input type="text" name="nama_siswa" readonly class="form-control" value="<?=$data->nama_siswa ?>">
