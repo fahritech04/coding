@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['login'])){
+    header('Location: ../login/login.php');
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,7 +22,7 @@
 </head>
 
 <body class="container">
-    <h2 class="text-center bg-warning py-2">DATA KELAS</h2>
+    <h2 class="text-center bg-success text-white py-2">DATA KELAS</h2>
     
     <?php
         

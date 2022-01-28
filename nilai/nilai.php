@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['login'])){
+    header('Location: ../login/login.php');
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,14 +22,14 @@
 </head>
 
 <body class="container">
-    <h2 class="text-center bg-warning py-2">DATA NILAI</h2>
+    <h2 class="text-center bg-success text-white py-2">DATA NILAI</h2>
     
     <?php
         
         include "../config.php";
         $query  = mysqli_query($koneksi, "SELECT siswa_id, nama_siswa, nilai FROM data_nilai JOIN data_siswa ON data_nilai.siswa_id = data_siswa.id_siswa")?>
         <a href="../siswa/index.php"  class="btn btn-danger">Data Siswa</a>
-        <a href="../kelas/kelas.php"  class="btn btn-warning">Kelas</a>
+        <a href="../kelas/kelas.php"  class="btn btn-warning">Data Kelas</a>
         <div class="mt-3 mb-2">
             <a href="../nilai/input_nilai.php" class="btn btn-primary">Input Nilai</a>
         </div>

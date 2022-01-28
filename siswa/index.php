@@ -1,3 +1,14 @@
+<?php
+
+session_start();
+
+if(!isset($_SESSION['login'])){
+    header('Location: ../login/login.php');
+    exit;
+}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -11,12 +22,17 @@
 </head>
 
 <body class="container">
-    <h2 class="text-center bg-warning py-2">APLIKASI DATA SISWA</h2>
+    <h2 class="text-center bg-success text-white py-2">APLIKASI DATA SISWA</h2>
     <div class="my-3 d-flex justify-content-between">
         <div>
             <a href="../kelas/kelas.php" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Kelas</a>
             <a href="../nilai/nilai.php" class="bg-warning p-2 mr-2 text-decoration-none text-white">Data Nilai</a>
-            <a href="../login/register.php" class="bg-success p-2 mr-2 text-decoration-none text-white ">Register</a>
+            <div class="mt-3">
+                <input type="text" class="form-control" placeholder="search" aria-label="search" aria-describedby="addon-wrapping">
+            </div>
+        </div>
+        <div>
+                <a href="../logout.php" class="bg-danger p-2 mr-2 text-decoration-none text-white ">Logout</a>
         </div>
     </div>
     
