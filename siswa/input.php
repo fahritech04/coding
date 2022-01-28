@@ -1,10 +1,11 @@
  <?php
  
     include "../config.php";
-    $query = mysqli_query($koneksi, "SELECT * FROM data_siswa JOIN data_kelas ON data_siswa.kelas_id = data_kelas.id");
-    $data = mysqli_fetch_object($query);
+    $query = mysqli_query($koneksi, "SELECT * FROM data_kelas");
  
  ?>
+ <body class="container">
+     
  
  <h2 class="text-center bg-warning py-2">APLIKASI DATA SISWA</h2>
 <!-- CDN Bootstrap -->
@@ -22,10 +23,9 @@
                 <select name="kelas_id" class="form-control form-select">
                 <option disabled selected> Pilih Kelas </option>
                     <?php 
-                        $sql = mysqli_query($koneksi, "SELECT * FROM data_kelas");
-                        while ($kelas = mysqli_fetch_array($sql)) {
+                        while ($kelas = mysqli_fetch_object($query)) {
                     ?>
-                        <option value="<?=$kelas['id']?>"><?=$kelas['nama_kelas']?></option> 
+                        <option value="<?=$kelas->id?>"><?=$kelas->nama_kelas?></option> 
                     <?php
                     }
                     ?>
@@ -46,3 +46,5 @@
         </form>
     </div>
 </div>
+
+</body>

@@ -16,7 +16,7 @@
     <?php
         
         include "../config.php";
-        $query  = mysqli_query($koneksi, "SELECT id_siswa, nama_siswa, nilai FROM data_nilai JOIN data_siswa ON data_nilai.siswa_id = data_siswa.id_siswa")?>
+        $query  = mysqli_query($koneksi, "SELECT siswa_id, nama_siswa, nilai FROM data_nilai JOIN data_siswa ON data_nilai.siswa_id = data_siswa.id_siswa")?>
         <a href="../siswa/index.php"  class="btn btn-danger">Data Siswa</a>
         <a href="../kelas/kelas.php"  class="btn btn-warning">Kelas</a>
         <div class="mt-3 mb-2">
@@ -33,14 +33,14 @@
                     <th>Aksi</th>
                 </tr>
             </thread>
-            <?php $no = 1; while($data = mysqli_fetch_array($query)){?>
+            <?php $no = 1; while($data = mysqli_fetch_object($query)){?>
                 <tbody>
                     <tr>
                         <td><?= $no++ ?></td>
-                        <td><?= $data['nama_siswa'] ?></td>
-                        <td><?= $data['nilai'] ?></td>               
+                        <td><?= $data->nama_siswa ?></td>
+                        <td><?= $data->nilai ?></td>               
                         <td><?php
-                         if($data['nilai'] < 75){
+                         if($data->nilai < 75){
                           echo "<span class='badge bg-danger'>Tidak Tuntas</span>";
                          }else {
                           echo "<span class='badge bg-primary'>Tuntas</span>";
@@ -48,8 +48,8 @@
                         ?></td>
                         <td>
                             <div class="btn-group">
-                            <a href="../nilai/edit_nilai.php?id=<?= $data['id_siswa']?>" class="btn btn-success">Edit</a>
-                            <a href="../nilai/delete_nilai.php?id=<?= $data['id_siswa']?>" class="btn btn-danger">Delete</a>
+                            <a href="../nilai/edit_nilai.php?id=<?= $data->siswa_id?>" class="btn btn-success">Edit</a>
+                            <a href="../nilai/delete_nilai.php?id=<?= $data->siswa_id?>" class="btn btn-danger">Delete</a>
                             </div>
                         </td>
                     </tr>

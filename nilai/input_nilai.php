@@ -1,9 +1,9 @@
 <?php
     include "../config.php";
 
-    $query  = mysqli_query($koneksi, "SELECT id_siswa, nama_siswa, nilai FROM data_nilai JOIN data_siswa ON data_nilai.siswa_id = data_siswa.id_siswa");
-    $data   = mysqli_fetch_object($query);
 ?>
+<body class="container">
+    
 
 <h2 class="text-center bg-warning py-2">INPUT DATA NILAI</h2>
 <!-- CDN Bootstrap -->
@@ -17,9 +17,9 @@
                 <option disabled selected> Pilih Nama </option>
                     <?php 
                         $sql = mysqli_query($koneksi, "SELECT * FROM data_siswa");
-                        while ($siswa = mysqli_fetch_array($sql)) {
+                        while ($siswa = mysqli_fetch_object($sql)) {
                     ?>
-                        <option value="<?=$siswa['id_siswa']?>"><?=$siswa['nama_siswa']?></option> 
+                        <option value="<?=$siswa->id_siswa?>"><?=$siswa->nama_siswa?></option> 
                     <?php
                     }
                     ?>
@@ -36,3 +36,5 @@
         </form>
     </div>
 </div>
+
+</body>

@@ -4,6 +4,9 @@
     $query  = mysqli_query($koneksi, "SELECT id_siswa, nama_siswa, nilai FROM data_nilai JOIN data_siswa ON data_nilai.siswa_id = data_siswa.id_siswa WHERE siswa_id='$_GET[id]'");
     $data   = mysqli_fetch_object($query);
 ?>
+<body class="container">
+    
+
 <h2 class="text-center bg-warning py-2">EDIT DATA KELAS</h2>
 <!-- CDN Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
@@ -28,3 +31,5 @@
         </form>
     </div>
 </div>
+
+</body>
