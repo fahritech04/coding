@@ -53,25 +53,54 @@
                 case 'edit?siswa':
                     include "siswa/edit.php";
                     break;
+                case 'simpan?siswa':
+                    include "siswa/simpan.php";
+                    break;
+                case 'update?siswa':
+                    include "siswa/update.php";
+                    break;
+                case 'delete?siswa':
+                    include "siswa/delete.php";
+                    break;
+
                 // Kelas
                 case 'kelas':
                     include "kelas/kelas.php";
                     break;
-                case 'kelas':
-                    include "kelas/kelas.php";
+                case 'input?kelas':
+                    include "kelas/inputkelas.php";
                     break;
-                case 'kelas':
-                    include "kelas/kelas.php";
+                case 'edit?kelas':
+                    include "kelas/edit_kelas.php";
                     break;
+                case 'simpan?kelas':
+                    include "kelas/simpan_kelas.php";
+                    break;
+                case 'update?kelas':
+                    include "kelas/update_kelas.php";
+                    break;
+                case 'delete?kelas':
+                    include "kelas/delete_kelas.php";
+                    break;
+
                 // nilai
                 case 'nilai':
                     include "nilai/nilai.php";
                     break;
-                case 'nilai':
-                    include "nilai/nilai.php";
+                case 'input?nilai':
+                    include "nilai/input_nilai.php";
                     break;
-                case 'nilai':
-                    include "nilai/nilai.php";
+                case 'edit?nilai':
+                    include "nilai/edit_nilai.php";
+                    break;
+                case 'simpan?nilai':
+                    include "nilai/simpan_nilai.php";
+                    break;
+                case 'update?nilai':
+                    include "nilai/update_nilai.php";
+                    break;
+                case 'delete?nilai':
+                    include "nilai/delete_nilai.php";
                     break;
                 default:
                     echo "<center><h3>Maaf, Halaman tidak di temukan</h3></center>";

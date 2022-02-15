@@ -30,7 +30,7 @@
         $query = mysqli_query($koneksi, "SELECT * FROM data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id");
         
         ?>
-        <a href="../siswa/input.php" class="btn btn-primary">Data Baru</a> 
+        <a href="index.php?page=input?siswa" class="btn btn-primary">Data Baru</a> 
         <table class="table table-striped table-dark">
             <thread class="thead-dark">
                 <tr>
