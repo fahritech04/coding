@@ -1,6 +1,6 @@
 <?php
- // session_start();
- include "../config.php";
+ session_start();
+ include "config.php";
 
  $username  = $_POST['username'];
  $pass      = $_POST['pass'];
@@ -15,11 +15,11 @@
    // Set session
    $_SESSION['login'] = true;
    
-   header('Location: ../siswa/siswa.php');
+   header('Location: index.php?page=siswa');
    exit;
   }
     
  }
- header('Location: ../login/login.php');
+ header('Location: index.php?page=login');
 
 ?>

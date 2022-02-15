@@ -1,11 +1,11 @@
 <?php
 
-// session_start();
+session_start();
 
-// if(!isset($_SESSION['login'])){
-//     header('Location: ../login/login.php');
-//     exit;
-// }
+if(!isset($_SESSION['login'])){
+    header('Location: index.php?page=login');
+    exit;
+}
 
 ?>
 
@@ -28,7 +28,7 @@
         include "config.php";
         $query = mysqli_query($koneksi, 'SELECT * FROM data_kelas') ?>
         <div class="mt-3 mb-2">
-            <a href="../kelas/inputkelas.php" class="btn btn-primary">Data Baru</a>
+            <a href="index.php?page=input?kelas" class="btn btn-primary">Data Baru</a>
         </div>
         
         <table class="table table-striped table-dark">

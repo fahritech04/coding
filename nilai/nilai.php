@@ -1,11 +1,11 @@
 <?php
 
-// session_start();
+session_start();
 
-// if(!isset($_SESSION['login'])){
-//     header('Location: ../login/login.php');
-//     exit;
-// }
+if(!isset($_SESSION['login'])){
+    header('Location: index.php?page=login');
+    exit;
+}
 
 ?>
 
@@ -28,7 +28,7 @@
         include "config.php";
         $query  = mysqli_query($koneksi, "SELECT siswa_id, nama_siswa, nilai FROM data_nilai JOIN data_siswa ON data_nilai.siswa_id = data_siswa.id_siswa")?>
         <div class="mt-3 mb-2">
-            <a href="../nilai/input_nilai.php" class="btn btn-primary">Input Nilai</a>
+            <a href="index.php?page=input?nilai" class="btn btn-primary">Input Nilai</a>
         </div>
         
         <table class="table table-striped table-dark">

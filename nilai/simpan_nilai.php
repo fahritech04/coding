@@ -1,6 +1,6 @@
 <?php
 
- include "../config.php";
+ include "config.php";
 
  $siswa_id = $_POST['siswa_id'];
  $nilai = $_POST['nilai'];
@@ -17,5 +17,5 @@
  //  mysqli_query($koneksi, "INSERT INTO data_nilai (input_nilai) VALUE ('$input_nilai')");
  // }
 
- header('Location: ../nilai/nilai.php');
+ header('Location: index.php?page=nilai');
 ?>

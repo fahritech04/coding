@@ -1,11 +1,11 @@
 <?php
 
-// session_start();
+session_start();
 
-// if(!isset($_SESSION['login'])){
-//     header('Location: ../login/login.php');
-//     exit;
-// }
+if(!isset($_SESSION['login'])){
+    header('Location: index.php?page=login');
+    exit;
+}
 
 ?>
 
@@ -52,8 +52,8 @@
                         <td><?= $data->alamat ?></td>
                         <td>
                             <div class="btn-group">
-                                <a href="../siswa/edit.php?id=<?=$data->id_siswa ?>" class="btn btn-success">Edit</a>
-                                <a href="../siswa/delete.php?id=<?=$data->id_siswa ?>" class="btn btn-danger">Delete</a>
+                                <a href="index.php?page=edit?siswa=<?=$data->id_siswa ?>" class="btn btn-success">Edit</a>
+                                <a href="index.php?page=delete?siswa=<?=$data->id_siswa ?>" class="btn btn-danger">Delete</a>
                             </div>
                         </td>
                     </tr>

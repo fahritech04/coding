@@ -1,5 +1,5 @@
 <?php
- include "../config.php";
+ include "config.php";
  
  $username  = $_POST['username'];
  $pass      = $_POST['pass'];
@@ -21,7 +21,7 @@
 
  
 
- header('Location: ../login/login.php');
+ header('Location: index.php?page=login');
 
 
 ?>

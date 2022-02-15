@@ -1,11 +1,11 @@
 <?php
 
-// session_start();
+session_start();
 
-// if(isset($_SESSION['login'])){
-//     header('Location: ../siswa/index.php');
-//     exit;
-// }
+if(isset($_SESSION['login'])){
+    header('Location: index.php?page=siswa');
+    exit;
+}
 
 ?>
 
@@ -19,7 +19,7 @@
         <div class="card bg-success text-white" style="border-radius: 1rem;">
           <div class="card-body p-5 text-center">
 
-            <form action="../login/simpan_login.php" method="post">
+            <form action="index.php?page=simpan?login" method="post">
             <div class="mb-md-5 mt-md-4 pb-5">
 
              
@@ -38,7 +38,7 @@
 
               <div class="btn-group">
                <div class="me-2">
-                <a href="../register/register.php" class="btn btn-warning btn-lg">Register</a>
+                <a href="index.php?page=register" class="btn btn-warning btn-lg">Register</a>
                </div>
                <div class="me-2">
                 <input type="submit" value="Login" class="btn btn-light btn-lg">

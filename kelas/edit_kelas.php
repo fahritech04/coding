@@ -1,13 +1,13 @@
 <?php
 
-    // session_start();
+    session_start();
 
-    // if(!isset($_SESSION['login'])){
-    //     header('Location: ../login/login.php');
-    //     exit;
-    // }
+    if(!isset($_SESSION['login'])){
+        header('Location: index.php?page=login');
+        exit;
+    }
 
-    include "../config.php";
+    include "config.php";
 
     $query  = mysqli_query($koneksi, "SELECT * FROM data_kelas WHERE id='$_GET[id]'");
     $data   = mysqli_fetch_object($query);
@@ -21,7 +21,7 @@
 
 <div class="container">
     <div class="col-6">
-        <form action="../kelas/update_kelas.php" method="post">
+        <form action="index.php?page=update?kelas" method="post">
             <input type="hidden" name="id" value="<?=$data->id ?>">
             <div class="mb-3">
                 <label for="">Nama Kelas</label>
@@ -29,7 +29,7 @@
             </div>
            
             <div class="btn-group">
-                <a href="../kelas/kelas.php" class="btn btn-warning">Batal</a>
+                <a href="index.php?page=kelas" class="btn btn-warning">Batal</a>
                 <input type="submit" value="Update" class="btn btn-primary">
             </div>
         </form>

@@ -8,7 +8,7 @@
 
 <div class="container">
     <div class="col-6 mx-auto">
-        <form action="../register/simpan_register.php" method="post">
+        <form action="index.php?page=simpan?register" method="post">
             <div class="mb-3">
                 <label for="">Username</label>
                 <input type="text" name="username" class="form-control" placeholder="Masukkan Username">
@@ -18,7 +18,7 @@
                 <input type="password" name="pass" class="form-control" placeholder="Masukkan Password">
             </div>
             <div class="btn-group">
-                <a href="../login/login.php" class="btn btn-warning">Batal</a>
+                <a href="index.php?page=login" class="btn btn-warning">Batal</a>
                 <input type="submit" value="Simpan" class="btn btn-primary">
             </div>
         </form>
