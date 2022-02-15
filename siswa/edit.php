@@ -1,11 +1,11 @@
 <?php
 
-    session_start();
+    // session_start();
 
-    if(!isset($_SESSION['login'])){
-        header('Location: ../login/login.php');
-        exit;
-    }
+    // if(!isset($_SESSION['login'])){
+    //     header('Location: ../login/login.php');
+    //     exit;
+    // }
 
     include "../config.php";
 
@@ -50,7 +50,7 @@
                 <textarea name="alamat" class="form-control"><?= $data->alamat?></textarea>
             </div>
             <div class="btn-group">
-                <a href="../siswa/index.php" class="btn btn-warning">Batal</a>
+                <a href="../siswa/siswa.php" class="btn btn-warning">Batal</a>
                 <input type="submit" value="Update" class="btn btn-primary">
             </div>
         </form>

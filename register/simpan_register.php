@@ -21,7 +21,7 @@
 
  
 
- header('Location: ../siswa/index.php');
+ header('Location: ../login/login.php');
 
 
 ?>

@@ -11,5 +11,5 @@
     VALUE ('$nama_siswa', '$kelas_id', '$no_hp', '$alamat')");
 
 
-    header('Location: ../siswa/index.php');
+    header('Location: ../siswa/siswa.php');
 ?>
