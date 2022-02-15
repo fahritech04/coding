@@ -3,23 +3,17 @@
     session_start();
 
     if(!isset($_SESSION['login'])){
-        header('Location: index.php?page=login');
+        header('Location: ?page=login');
         exit;
     }
-
-    include "config.php";
 
     $query  = mysqli_query($koneksi, "SELECT * FROM data_siswa JOIN data_kelas ON data_siswa.kelas_id = data_kelas.id WHERE id_siswa='$_GET[id]'");
     $data   = mysqli_fetch_object($query);
 ?>
-<body class="container">
-    
-<!-- CDN Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<body class="container">    
 
-<div class="container">
     <div class="col-6">
-        <form action="index.php?page=update?siswa" method="POST">
+        <form action="?page=update_siswa" method="POST">
             <input type="hidden" name="id_siswa" value="<?=$data->id_siswa ?>">
             <div class="mb-3">
                 <label for="">Nama Siswa</label>
@@ -48,11 +42,10 @@
                 <textarea name="alamat" class="form-control"><?= $data->alamat?></textarea>
             </div>
             <div class="btn-group">
-                <a href="index.php?page=siswa" class="btn btn-warning">Batal</a>
+                <a href="?page=siswa" class="btn btn-warning">Batal</a>
                 <input type="submit" value="Update" class="btn btn-primary">
             </div>
         </form>
     </div>
-</div>
 
 </body>

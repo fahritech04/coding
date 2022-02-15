@@ -1,5 +1,4 @@
 <?php
- include "config.php";
  
  $username  = $_POST['username'];
  $pass      = $_POST['pass'];
@@ -13,7 +12,7 @@
  $reg = mysqli_query($koneksi, "SELECT * FROM user WHERE username='$username'");
  if(mysqli_fetch_assoc($reg)){
   echo "<script> alert('Username Sudah Tersedia'); </script>";
-  header('location: ../register/register.php');
+  header('location: ?page=register');
   exit;
  }
 
@@ -21,7 +20,7 @@
 
  
 
- header('Location: index.php?page=login');
+ header('Location: ?page=login');
 
 
 ?>

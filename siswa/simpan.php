@@ -1,5 +1,4 @@
 <?php
- include "config.php";
 
     $nama_siswa = $_POST['nama_siswa'];
     $kelas_id   = $_POST['kelas_id'];
@@ -11,5 +10,5 @@
     VALUE ('$nama_siswa', '$kelas_id', '$no_hp', '$alamat')");
 
 
-    header('Location: index.php?page=siswa');
+    header('Location: ?page=siswa');
 ?>

@@ -1,9 +1,9 @@
 <?php
 
-session_start();
-$_SESSION = [];
-session_unset();
-session_destroy();
+ session_start();
+ $_SESSION = [];
+ session_unset();
+ session_destroy();
 
-header('location: ../login/login.php');
+ header('location: ?page=login');
 ?>

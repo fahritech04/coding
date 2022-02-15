@@ -8,19 +8,19 @@
                 case 'siswa':
                     include "siswa/siswa.php";
                     break;
-                case 'input?siswa':
+                case 'input_siswa':
                     include "siswa/input.php";
                     break;
-                case 'edit?siswa':
+                case 'edit_siswa':
                     include "siswa/edit.php";
                     break;
-                case 'simpan?siswa':
+                case 'simpan_siswa':
                     include "siswa/simpan.php";
                     break;
-                case 'update?siswa':
+                case 'update_siswa':
                     include "siswa/update.php";
                     break;
-                case 'delete?siswa':
+                case 'delete_siswa':
                     include "siswa/delete.php";
                     break;
 
@@ -28,19 +28,19 @@
                 case 'kelas':
                     include "kelas/kelas.php";
                     break;
-                case 'input?kelas':
+                case 'input_kelas':
                     include "kelas/inputkelas.php";
                     break;
-                case 'edit?kelas':
+                case 'edit_kelas':
                     include "kelas/edit_kelas.php";
                     break;
-                case 'simpan?kelas':
+                case 'simpan_kelas':
                     include "kelas/simpan_kelas.php";
                     break;
-                case 'update?kelas':
+                case 'update_kelas':
                     include "kelas/update_kelas.php";
                     break;
-                case 'delete?kelas':
+                case 'delete_kelas':
                     include "kelas/delete_kelas.php";
                     break;
 
@@ -48,19 +48,19 @@
                 case 'nilai':
                     include "nilai/nilai.php";
                     break;
-                case 'input?nilai':
+                case 'input_nilai':
                     include "nilai/input_nilai.php";
                     break;
-                case 'edit?nilai':
+                case 'edit_nilai':
                     include "nilai/edit_nilai.php";
                     break;
-                case 'simpan?nilai':
+                case 'simpan_nilai':
                     include "nilai/simpan_nilai.php";
                     break;
-                case 'update?nilai':
+                case 'update_nilai':
                     include "nilai/update_nilai.php";
                     break;
-                case 'delete?nilai':
+                case 'delete_nilai':
                     include "nilai/delete_nilai.php";
                     break;
 
@@ -68,7 +68,7 @@
                 case 'login':
                     include "login/login.php";
                     break;
-                case 'simpan?login':
+                case 'simpan_login':
                     include "login/simpan_login.php";
                     break;
                 case 'logout':
@@ -79,7 +79,7 @@
                 case 'register':
                     include "register/register.php";
                     break;
-                case 'simpan?register':
+                case 'simpan_register':
                     include "register/simpan_register.php";
                     break;
                 default:
