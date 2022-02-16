@@ -23,7 +23,7 @@
 <body class="container">
     
     <div class="mt-3 mb-2">
-        <a href="?page=input_kelas" class="btn btn-primary">Data Baru</a>
+        <a href="?page=input_kelas" class="btn btn-outline-primary">Input Kelas</a>
     </div>
     
     <table class="table table-striped table-dark">
@@ -34,16 +34,16 @@
                 <th>Aksi</th>
             </tr>
         </thread>
-        <?php $no=1; while($data = mysqli_fetch_array($query)){ ?>
+        <?php $no=1; while($data = mysqli_fetch_object($query)){ ?>
         <tbody>
             <tr>
                 <td><?= $no++ ?></td>
-                <td><?= $data['nama_kelas'] ?></td>
+                <td><?= $data->nama_kelas ?></td>
                 
                 <td>
                     <div class="btn-group">
-                        <a href="?page=edit_kelas&id=<?=$data["id"]?>" class="btn btn-success">Edit</a>
-                        <a href='?page=delete_kelas&id=<?=$data['id']?>' class="btn btn-danger">Delete</a>
+                        <a href="?page=edit_kelas&id=<?=$data->id?>" class="btn btn-success me-2">Edit</a>
+                        <a href='?page=delete_kelas&id=<?=$data->id?>' class="btn btn-danger">Delete</a>
                     </div>
                 </td>
             </tr>

@@ -23,7 +23,7 @@
 <body class="container">    
 
     <div class="mt-3 mb-2">
-        <a href="?page=input_nilai" class="btn btn-primary">Input Nilai</a>
+        <a href="?page=input_nilai" class="btn btn-outline-primary">Input Nilai</a>
     </div>
     
     <table class="table table-striped table-dark">
@@ -51,8 +51,8 @@
                 ?></td>
                 <td>
                     <div class="btn-group">
-                    <a href="?page=edit_nilai&id=<?= $data->siswa_id?>" class="btn btn-success">Edit</a>
-                    <a href="?page=delete_nilai&id=<?= $data->siswa_id?>" class="btn btn-danger">Delete</a>
+                        <a href="?page=edit_nilai&id=<?= $data->siswa_id?>" class="btn btn-success me-2">Edit</a>
+                        <a href="?page=delete_nilai&id=<?= $data->siswa_id?>" class="btn btn-danger">Delete</a>
                     </div>
                 </td>
             </tr>

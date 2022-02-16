@@ -9,25 +9,43 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 
-<body class="container">
-    <h2 class="text-center bg-success text-white py-2">APLIKASI DATA SISWA</h2>
-    <div class="my-3 d-flex justify-content-between">
-        <div>
-            <a href="index.php?page=siswa" class="bg-primary p-2 mr-2 text-decoration-none text-white">Data Siswa</a>
-            <a href="index.php?page=kelas" class="bg-danger p-2 mr-2 text-decoration-none text-white">Data Kelas</a>
-            <a href="index.php?page=nilai" class="bg-warning p-2 mr-2 text-decoration-none text-white">Data Nilai</a>
-        </div>
-        <div>
-            <a href="index.php?page=logout" class="bg-danger p-2 mr-2 text-decoration-none text-white ">Logout</a>
-        </div>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-success mb-3 rounded-bottom">
+  <div class="container">
+    <a class="navbar-brand" href="?page=siswa">Aplikasi Data Siswa</a>
+    
+    <div class="navbar-collapse">
+
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" href="?page=siswa">Siswa</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="?page=kelas">Kelas</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="?page=nilai">Nilai</a>
+        </li>
+    </ul>
+    
+    <form class="d-flex">
+        <input class="form-control me-2" type="search" placeholder="Search">
+        <button class="btn btn-outline-light me-2" type="submit">Search</button>
+        <a href="?page=logout" class="btn btn-warning">Logout</a>
+    </form>
+
     </div>
-    
-    <?php 
-    
+
+  </div>
+</nav>
+
+<?php
+
     include "config.php";
     include_once "route/router.php";
-    
-    ?>
+
+?>
 
 </body>
 

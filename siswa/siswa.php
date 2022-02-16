@@ -9,10 +9,6 @@
 
     $query = mysqli_query($koneksi, "SELECT * FROM data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id");
 
-    if(isset($_GET['cari'])){
-        $cari = $_GET['cari'];
-        echo "<b>Hasil pencarian : ".$cari."</b>";
-    }
 
 ?>
 
@@ -27,16 +23,7 @@
 
 <body class="container">    
 
-        <form class="row g-1 mb-3" action="" method="get">
-            <div class="col-3">
-                <input type="text" name="cari" class="form-control" placeholder="Search">
-            </div>
-            <div class="col-auto">
-                <input type="submit" value="Cari" class="btn btn-primary">
-            </div>
-        </form>
-
-    <a href="?page=input_siswa" class="btn btn-primary">Data Baru</a> 
+    <a href="?page=input_siswa" class="btn btn-outline-primary mb-2">Input Siswa</a> 
     <table class="table table-striped table-dark">
         <thread class="thead-dark">
             <tr>
@@ -48,15 +35,7 @@
                 <th>Aksi</th>
             </tr>
         </thread>
-        <?php 
-        if(isset($_GET['cari'])){
-            $cari = $_GET['cari'];
-            $data = mysqli_query($koneksi, "SELECT * FROM data_siswa JOIN data_kelas on data_siswa.kelas_id = data_kelas.id WHERE nama_siswa LIKE '%$cari%' ");				
-        }else{
-            $data = mysqli_query($koneksi, "SELECT * FROM data_siswa JOIN data_kelas on data_siswa.kelas_id = data_kelas.id");		
-        }
-        $no=1; 
-        while($data = mysqli_fetch_object($data)){ ?>
+        <?php $no=1; while($data = mysqli_fetch_object($query)){ ?>
         <tbody>
             <tr>
                 <td><?= $no++ ?></td>
@@ -66,7 +45,7 @@
                 <td><?= $data->alamat ?></td>
                 <td>
                     <div class="btn-group">
-                        <a href="?page=edit_siswa&id=<?=$data->id_siswa ?>" class="btn btn-success">Edit</a>
+                        <a href="?page=edit_siswa&id=<?=$data->id_siswa ?>" class="btn btn-success me-2">Edit</a>
                         <a href="?page=delete_siswa&id=<?=$data->id_siswa ?>" class="btn btn-danger">Delete</a>
                     </div>
                 </td>
