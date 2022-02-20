@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 28, 2022 at 01:54 PM
--- Server version: 10.4.21-MariaDB
--- PHP Version: 8.0.12
+-- Generation Time: Feb 20, 2022 at 10:04 AM
+-- Server version: 10.4.22-MariaDB
+-- PHP Version: 8.1.2
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `siswa1`
+-- Database: `siswa`
 --
 
 -- --------------------------------------------------------
@@ -40,7 +40,7 @@ INSERT INTO `data_kelas` (`id`, `nama_kelas`) VALUES
 (7, 'XI RPL'),
 (8, 'X RPL'),
 (9, 'XII RPL'),
-(11, 'X TKJ');
+(11, 'XII TKJ');
 
 -- --------------------------------------------------------
 
@@ -59,8 +59,10 @@ CREATE TABLE `data_nilai` (
 --
 
 INSERT INTO `data_nilai` (`id_nilai`, `siswa_id`, `nilai`) VALUES
-(26, 8, 80),
-(27, 4, 90);
+(26, 8, 50),
+(27, 4, 90),
+(28, 9, 90),
+(29, 11, 80);
 
 -- --------------------------------------------------------
 
@@ -82,7 +84,9 @@ CREATE TABLE `data_siswa` (
 
 INSERT INTO `data_siswa` (`id_siswa`, `nama_siswa`, `kelas_id`, `no_hp`, `alamat`) VALUES
 (4, 'Muhammad Raihan', 8, '082149820129', 'Jalan Suryaganggawangsa '),
-(8, 'maman', 9, '083467237612', 'Jalan Sigam');
+(8, 'maman', 9, '083467237612', 'Jalan Sigam'),
+(9, 'bambang', 7, '082149820129', 'Jalan Sigam'),
+(11, 'Muhammad Raihan Fahlevi', 7, '082149820129', 'Jalan Buntu');
 
 -- --------------------------------------------------------
 
@@ -101,7 +105,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `pass`) VALUES
-(1, 'raihan', '$2y$10$vOgFHfbOCYCrw5DBN4MZJO8eeVjPKbk/HjwiEwJfT1O44mZ.gMJqe');
+(1, 'raihan', '$2y$10$vOgFHfbOCYCrw5DBN4MZJO8eeVjPKbk/HjwiEwJfT1O44mZ.gMJqe'),
+(2, 'admin', '$2y$10$GhGvP9qdLdOJixgXPM/fou9uFAYrIiGS8y80r492edsGj1O0XKjSW');
 
 --
 -- Indexes for dumped tables
@@ -141,25 +146,25 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `data_kelas`
 --
 ALTER TABLE `data_kelas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `data_nilai`
 --
 ALTER TABLE `data_nilai`
-  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
+  MODIFY `id_nilai` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT for table `data_siswa`
 --
 ALTER TABLE `data_siswa`
-  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_siswa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
