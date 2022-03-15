@@ -29,11 +29,11 @@
         </li>
     </ul>
     
-    <form class="d-flex">
-        <input class="form-control me-2" type="search" placeholder="Search">
+    <!-- <form action="?page=siswa" method="POST" class="d-flex">
+        <input class="form-control me-2" name="search" type="search" placeholder="Search">
         <button class="btn btn-outline-light me-2" type="submit">Search</button>
         <a href="?page=logout" class="btn btn-warning">Logout</a>
-    </form>
+    </form> -->
 
     </div>
 

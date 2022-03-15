@@ -7,7 +7,7 @@
         exit;
     }
 
-    $query  = mysqli_query($koneksi, "SELECT * FROM data_siswa JOIN data_kelas ON data_siswa.kelas_id = data_kelas.id WHERE id_siswa='$_GET[id]'");
+    $query  = mysqli_query($koneksi, "SELECT data_siswa.id_siswa, nama_siswa, kelas_id, no_hp, alamat FROM data_siswa JOIN data_kelas ON data_siswa.kelas_id = data_kelas.id WHERE id_siswa='$_GET[id]'");
     $data   = mysqli_fetch_object($query);
 ?>
 <body class="container">    

@@ -7,7 +7,14 @@
         exit;
     };
 
-    $query = mysqli_query($koneksi, "SELECT * FROM data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id");
+    if(isset($_POST['search'])){
+        $query = mysqli_query($koneksi, 
+        'SELECT * FROM data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id
+        WHERE nama_siswa LIKE "%' . $_POST['search'] . '%" ');
+    } else {
+        $query = mysqli_query($koneksi, 
+        'SELECT * FROM data_siswa join data_kelas on data_siswa.kelas_id = data_kelas.id');
+    }
 
 
 ?>
@@ -22,8 +29,16 @@
 </head>
 
 <body class="container">    
+<div class="d-flex justify-content-between mb-2">
+    <div>
+        <a href="?page=input_siswa" class="btn btn-primary mb-2">Input Siswa</a> 
+    </div>
+    <form action="" method="POST" class="col-3 d-flex">
+        <input class="form-control me-2" name="search" placeholder="Search">
+        <input type="submit" class="btn btn-warning" value="Search">
+    </form>
+</div>
 
-    <a href="?page=input_siswa" class="btn btn-outline-primary mb-2">Input Siswa</a> 
     <table class="table table-striped table-dark">
         <thread class="thead-dark">
             <tr>
